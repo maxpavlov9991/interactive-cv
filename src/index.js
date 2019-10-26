@@ -6,10 +6,12 @@ import './index.css'
 import App from './App'
 import * as serviceWorker from './serviceWorker'
 import MobileDetect from 'mobile-detect'
-import store from './store'
+import store, { actions as storeActions } from './store'
 
 const md = new MobileDetect(window.navigator.userAgent)
 const isMobile = Boolean(md.mobile())
+
+store.dispatch(storeActions.setDevice(isMobile ? 'mobile' : 'desktop'))
 
 ReactDOM.render(
   <Provider store={store}>
