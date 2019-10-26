@@ -17,9 +17,14 @@ jobs:
         uses: Borales/actions-yarn@v2.0.1
         with:
           cmd: build
-
+      
       - name: Deploy
-        uses: maxheld83/ghpages@v0.2.1
-        env: 
-          BUILD_DIR: build/
-          GH_PAT: ${{ secrets.GH_Pages_Deploy }}
+        uses: Borales/actions-yarn@v2.0.1
+        with: 
+          cmd: deploy
+
+      # - name: Deploy
+      #   uses: maxheld83/ghpages@v0.2.1
+      #   env: 
+      #     BUILD_DIR: build/
+      #     GH_PAT: ${{ secrets.GH_Pages_Deploy }}
