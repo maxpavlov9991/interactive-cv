@@ -1,3 +1,7 @@
+name: Standard style check
+
+on: [push]
+
 jobs:
   lint:
     runs-on: ubuntu-latest
